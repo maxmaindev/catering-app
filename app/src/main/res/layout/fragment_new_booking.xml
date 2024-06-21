@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="@dimen/start_screen_margin"
+    tools:context=".ui.client.booking.NewBookingFragment">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.35" />
+
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/business_image"
+            app:layout_constraintBottom_toTopOf="@id/guideline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textColor="@color/black"
+            android:textSize="26sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/guideline"
+            tools:text="Americano Pizza" />
+
+        <TextView
+            android:id="@+id/tvAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:drawablePadding="3dp"
+            android:textColor="@color/gray"
+            app:layout_constraintHorizontal_bias="0"
+            android:ellipsize="end"
+            android:maxLines="2"
+            app:drawableLeftCompat="@drawable/baseline_location_pin_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tvName"
+            app:layout_constraintTop_toBottomOf="@id/tvName"
+            tools:text="вулиця Бориса Джонсона 24" />
+        <TextView
+            android:id="@+id/tvWorkingHours"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:drawablePadding="3dp"
+            android:layout_marginTop="6dp"
+            app:drawableLeftCompat="@drawable/baseline_access_time_filled_24"
+            android:textColor="@color/gray"
+            app:layout_constraintTop_toBottomOf="@id/tvAddress"
+            app:layout_constraintStart_toStartOf="@id/tvName"
+            tools:text="Пн-Сб, 9:00-20:00"/>
+        <TextView
+            android:id="@+id/tvPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:drawablePadding="3dp"
+            android:layout_marginTop="6dp"
+            app:drawableLeftCompat="@drawable/baseline_phone_24"
+            android:textColor="@color/gray"
+            app:layout_constraintTop_toBottomOf="@id/tvWorkingHours"
+            app:layout_constraintStart_toStartOf="@id/tvName"
+            tools:text="380980855655"/>
+
+        <include
+            android:id="@+id/custom_date_view"
+            layout="@layout/custom_date_picker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:layout_constraintTop_toBottomOf="@id/tvPhone"
+            app:layout_constraintStart_toStartOf="@id/tvName"/>
+        <include
+            android:id="@+id/custom_time_view"
+            layout="@layout/custom_time_picker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="12dp"
+            app:layout_constraintTop_toBottomOf="@id/tvPhone"
+            app:layout_constraintStart_toEndOf="@id/custom_date_view"/>
+
+        <TextView
+            android:id="@+id/tvPeopleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/people_count"
+            android:textColor="@color/black"
+            android:layout_marginTop="24dp"
+            android:textSize="20sp"
+            app:layout_constraintTop_toBottomOf="@id/custom_date_view"
+            app:layout_constraintStart_toStartOf="@id/tvName" />
+
+
+        <Button
+            android:id="@+id/btn_minus"
+            android:layout_width="45dp"
+            android:layout_height="40dp"
+            android:text="-"
+            app:layout_constraintBaseline_toBaselineOf="@id/btn_plus"
+            app:layout_constraintEnd_toStartOf="@id/tvCount" />
+        <TextView
+            android:id="@+id/tvCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="16dp"
+            android:text="1"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/btn_plus"
+            app:layout_constraintEnd_toStartOf="@id/btn_plus" />
+
+        <Button
+            android:id="@+id/btn_plus"
+            android:layout_width="45dp"
+            android:layout_height="40dp"
+            android:text="+"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintBaseline_toBaselineOf="@id/tvPeopleText"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.88" />
+
+        <Button
+            android:id="@+id/btn_book"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/book"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/guideline_bottom"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.cateringapp.ui.client.home.business.HomeFragment"
+        android:label="@string/business"
+        tools:layout="@layout/fragment_businesses" >
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_menu"
+            app:destination="@id/navigation_menu" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/navigation_menu"
+        android:name="com.example.cateringapp.ui.client.home.menu.MenuFragment"
+        android:label="@string/menu"
+        tools:layout="@layout/fragment_menu" >
+        <argument
+            android:name="businessId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+        <action
+            android:id="@+id/action_navigation_menu_to_navigation_menu_item"
+            app:destination="@id/navigation_menu_item" />
+        <action
+            android:id="@+id/action_navigation_menu_to_navigation_news_list"
+            app:destination="@id/navigation_news_list" />
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/navigation_news_list"
+        android:name="com.example.cateringapp.ui.client.home.news.NewsFragment"
+        android:label="@string/news"
+        tools:layout="@layout/fragment_rv" >
+        <argument
+            android:name="businessId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+        <action
+            android:id="@+id/action_navigation_news_list_to_navigation_news_item"
+            app:destination="@id/navigation_news_item" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_news_item"
+        android:name="com.example.cateringapp.ui.client.home.news.NewsItemFragment"
+        android:label="@string/news"
+        tools:layout="@layout/fragment_news_item" >
+        <argument
+            android:name="newsId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_menu_item"
+        android:name="com.example.cateringapp.ui.client.home.menu.MenuItemFragment"
+        android:label="@string/menu"
+        tools:layout="@layout/fragment_menu_item" >
+        <argument
+            android:name="menuItemId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+    </fragment>
+
+</navigation>

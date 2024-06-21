@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.client.orders.UserBasketFragment">
+
+    <TextView
+        android:id="@+id/tvCustomer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/customer"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/tvCustomerNameSurname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/tvCustomer"
+        app:layout_constraintStart_toEndOf="@id/tvCustomer"
+        android:layout_marginStart="8dp"
+        tools:text="Андрій Черненко"/>
+
+    <TextView
+        android:id="@+id/tvInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/info"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/tvCustomer"
+        app:layout_constraintStart_toStartOf="@id/tvCustomer"
+        android:layout_marginTop="2dp" />
+
+    <TextView
+        android:id="@+id/tvInfoValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/tvInfo"
+        app:layout_constraintStart_toEndOf="@id/tvInfo"
+        android:layout_marginStart="8dp"
+        tools:text="Столик 6"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/itemRv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:layout_marginTop="16dp"
+        tools:listitem="@layout/item_orderitem_menu"
+        tools:itemCount="3"
+        app:layout_constraintTop_toBottomOf="@id/tvInfoValue"
+        app:layout_constraintBottom_toTopOf="@id/tvTotalValue"/>
+
+    <TextView
+        android:id="@+id/tvTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/total"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/tvTotalValue"
+        app:layout_constraintEnd_toStartOf="@id/tvTotalValue"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/tvTotalValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="8dp"
+        android:layout_margin="20dp"
+        tools:text="456 грн"/>
+
+    <Button
+        android:id="@+id/btn_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add_position"
+        android:layout_margin="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBaseline_toBaselineOf="@id/tvTotal"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

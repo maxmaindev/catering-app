@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/custom_date_textview"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:background="@drawable/background_rounded_corners"
+    tools:layout_margin="8dp">
+
+    <TextView
+        android:id="@+id/tvInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingTop="1dp"
+        android:text="@string/time"/>
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="4dp"
+        android:paddingTop="2dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="28dp"
+        android:drawablePadding="4dp"
+        app:drawableLeftCompat="@drawable/baseline_access_time_filled_24"
+        tools:text="18:30"/>
+</LinearLayout>

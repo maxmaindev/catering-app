@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="gray">#878787</color>
+
+
+    <color name="red_200">#FFCCCB</color> <!-- Легкий червоний, можна використовувати для акцентів -->
+    <color name="red_500">#FF0000</color> <!-- Основний червоний колір -->
+    <color name="red_700">#B22222</color> <!-- Темний червоний, можна використовувати для акцентів -->
+    <color name="yellow_200">#FFF8DC</color> <!-- Легкий жовтий, можна використовувати для акцентів -->
+    <color name="yellow_500">#FFC300</color> <!-- Основний жовтий колір -->
+    <color name="yellow_700">#FFB300</color> <!-- Темний жовтий, можна використовувати для акцентів -->
+</resources>
+

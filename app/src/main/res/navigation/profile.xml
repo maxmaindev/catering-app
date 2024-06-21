@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/profile"
+    app:startDestination="@+id/navigation_profile">
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.example.cateringapp.ui.client.profile.ProfileFragment"
+        android:label="@string/profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_navigation_profile_to_navigation_profile_edit"
+            app:destination="@id/navigation_profile_edit" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_profile_edit"
+        android:name="com.example.cateringapp.ui.client.profile.ProfileEditFragment"
+        android:label="@string/update_data"
+        tools:layout="@layout/fragment_profile_edit" >
+    </fragment>
+</navigation>

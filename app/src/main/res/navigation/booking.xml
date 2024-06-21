@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/booking"
+    app:startDestination="@+id/navigation_booking">
+
+    <fragment
+        android:id="@+id/navigation_booking"
+        android:name="com.example.cateringapp.ui.client.booking.BookingFragment"
+        android:label="@string/booking"
+        tools:layout="@layout/fragment_booking" >
+        <action
+            android:id="@+id/action_navigation_booking_to_navigation_business_for_booking"
+            app:destination="@id/navigation_business_for_booking" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/navigation_new_booking"
+        android:name="com.example.cateringapp.ui.client.booking.NewBookingFragment"
+        android:label="@string/booking"
+        tools:layout="@layout/fragment_new_booking" >
+        <action
+            android:id="@+id/action_navigation_new_booking_to_navigation_booking"
+            app:destination="@id/navigation_booking" />
+        <argument
+            android:name="businessId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_business_for_booking"
+        android:name="com.example.cateringapp.ui.client.booking.BusinessListFragment"
+        android:label="@string/choose_business_for_booking"
+        tools:layout="@layout/fragment_business_list" >
+        <action
+            android:id="@+id/action_navigation_business_for_booking_to_navigation_new_booking"
+            app:destination="@id/navigation_new_booking" />
+    </fragment>
+</navigation>

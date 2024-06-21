@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/auth_nav_graph"
+    app:startDestination="@+id/navigation_login">
+
+    <fragment
+        android:id="@+id/navigation_login"
+        android:name="com.example.cateringapp.ui.auth.LoginFragment"
+        android:label="@string/title_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_navigation_login_to_navigation_reg"
+            app:destination="@id/navigation_reg"
+            app:popUpTo="@id/navigation_login"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_navigation_login_to_homeActivityDestination"
+            app:destination="@id/homeActivityDestination" />
+        <action
+            android:id="@+id/action_navigation_login_to_navigation_admin_set_business"
+            app:destination="@id/navigation_admin_set_business" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_reg"
+        android:name="com.example.cateringapp.ui.auth.RegisterFragment"
+        android:label="@string/register"
+        tools:layout="@layout/fragment_reg" >
+        <action
+            android:id="@+id/action_navigation_reg_to_navigation_login"
+            app:destination="@id/navigation_login"
+            app:popUpTo="@id/navigation_reg"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_navigation_reg_to_homeActivityDestination"
+            app:destination="@id/homeActivityDestination" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_admin_set_business"
+        android:name="com.example.cateringapp.ui.auth.AdminBusinessListFragment"
+        android:label="@string/select_business"
+        tools:layout="@layout/fragment_business_list" >
+        <action
+            android:id="@+id/action_navigation_login_to_homeActivityDestination"
+            app:destination="@id/homeActivityDestination" />
+        <action
+            android:id="@+id/action_navigation_admin_set_business_to_navigation_admin_new_business"
+            app:destination="@id/navigation_admin_new_business" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_admin_new_business"
+        android:name="com.example.cateringapp.ui.auth.BusinessNewFragment"
+        android:label="@string/create_new_business"
+        tools:layout="@layout/fragment_business_edit" >
+        <action
+            android:id="@+id/action_navigation_login_to_homeActivityDestination"
+            app:destination="@id/homeActivityDestination" />
+    </fragment>
+
+    <activity
+        android:id="@+id/homeActivityDestination"
+        android:name="com.example.cateringapp.AuthActivity"
+        android:label="HomeActivity" />
+
+
+
+
+
+</navigation>

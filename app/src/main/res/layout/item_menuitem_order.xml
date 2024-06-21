@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginTop="8dp"
+    android:layout_marginHorizontal="2dp"
+    android:layout_marginBottom="2dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="@dimen/imgSize"
+            android:layout_height="@dimen/imgSize"
+            android:contentDescription="@string/menu_item_image"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:textColor="@color/black"
+            android:textSize="26sp"
+            app:layout_constraintHorizontal_bias="0"
+            android:ellipsize="end"
+            android:maxLines="2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/img"
+            app:layout_constraintTop_toTopOf="@id/constraint_layout"
+            tools:text="Americano Pizza" />
+
+        <TextView
+            android:id="@+id/tvDesc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:textColor="@color/gray"
+            app:layout_constraintHorizontal_bias="0"
+            android:ellipsize="end"
+            android:maxLines="3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tvName"
+            app:layout_constraintTop_toBottomOf="@id/tvName"
+            tools:text="Піца з беконом та грибами,покрита оливками та сиром дорблю " />
+        <TextView
+            android:id="@+id/tvMetrics"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:layout_marginTop="3dp"
+            android:textColor="@color/gray"
+            app:layout_constraintTop_toBottomOf="@id/tvDesc"
+            app:layout_constraintStart_toStartOf="@id/tvName"
+            tools:text="30см"/>
+        <TextView
+            android:id="@+id/tvCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:text="@string/count_shorted"
+            android:layout_marginTop="12dp"
+            android:textColor="@color/gray"
+            app:layout_constraintTop_toBottomOf="@id/img"
+            app:layout_constraintStart_toStartOf="@id/img"/>
+        <TextView
+            android:id="@+id/textview_minus"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/round_button"
+            android:text="-"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:layout_margin="10dp"
+            app:layout_constraintStart_toEndOf="@id/tvCount"
+            app:layout_constraintBaseline_toBaselineOf="@id/tvCount"/>
+
+        <TextView
+            android:id="@+id/tvCountValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:layout_marginStart="10dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            app:layout_constraintBaseline_toBaselineOf="@id/tvCount"
+            app:layout_constraintStart_toEndOf="@id/textview_minus"
+            tools:text="1"/>
+
+        <TextView
+            android:id="@+id/textview_plus"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/round_button"
+            android:text="+"
+            android:textSize="14sp"
+            android:layout_marginStart="10dp"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            app:layout_constraintStart_toEndOf="@id/tvCountValue"
+            app:layout_constraintBaseline_toBaselineOf="@id/tvCount"/>
+
+        <TextView
+            android:id="@+id/tvTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/total"
+            android:textColor="@color/gray"
+            android:layout_marginStart="8dp"
+            android:textSize="14sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/tvCount"
+            app:layout_constraintStart_toEndOf="@+id/textview_plus" />
+        <TextView
+            android:id="@+id/tvTotalValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            app:layout_constraintBaseline_toBaselineOf="@id/tvCount"
+            app:layout_constraintStart_toEndOf="@id/tvTotal"
+            tools:text="2564 грн"/>
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/edit_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="textview_plus,textview_minus,tvCount,tvCountValue,tvTotal,tvTotalValue"
+            android:visibility="invisible"
+            tools:visibility="visible"/>
+
+        <Button
+            android:id="@+id/btn_add"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/add"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBaseline_toBaselineOf="@id/tvCount"
+            tools:visibility="invisible"/>
+
+        <Button
+            android:id="@+id/btn_send"
+            android:layout_width="105dp"
+            android:layout_height="wrap_content"
+            android:text="@string/sent"
+            android:textSize="11sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBaseline_toBaselineOf="@id/tvCount"
+            android:visibility="invisible"
+            tools:visibility="visible"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>
